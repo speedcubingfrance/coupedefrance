@@ -1,0 +1,324 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{textcomp} %pour pouvoir avoir le "?" en faisant \texteuro
+\usepackage[colorlinks=true,pdftitle={Règlement CDFDC}]{hyperref}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage[a4paper,nohead,margin=1in]{geometry}
+\graphicspath{{img/}}
+
+
+% \usepackage{amsmath}
+% \usepackage{amsfonts}
+% \usepackage{amssymb}
+
+
+% \renewcommand{\thesection}{}
+
+% \renewcommand{\labelenumi}[1]{$\bullet$ \textbf{#1}}
+% \renewcommand{\labelenumi}{$\bullet$ }
+
+\newcommand{\cdf}{Coupe de France Kingscube}
+
+\fancyhf{}
+\lfoot{\textit{\textsc{\cdf}}}
+\cfoot{Règlement}
+\rfoot{\thepage/\pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.6pt}
+\pagestyle{fancy}
+
+%Définition des events pour pouvoir les taper rapidement
+\newcommand{\3}{$3\times3$}
+\newcommand{\4}{$4\times4$}
+\newcommand{\2}{$2\times2$}
+\newcommand{\oh}{$3\times3$ à une main}
+\newcommand{\bld}{$3\times3$ à l'aveugle}
+\newcommand{\pyra}{Pyraminx}
+
+\newcommand{\maxcomp}{6} %définir ici le nombre maximum de compétitions pris en compte pour le calcul des points
+
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+
+\vfill
+
+\includegraphics[width=10cm]{logo.png}
+
+\vskip 3cm
+
+%\Huge{\textsc{Coupe de France de Cube}}
+\Huge{\textsc{\cdf}}
+
+\vskip 1cm
+
+\Huge{Règlement}
+
+\vskip 3cm
+
+\includegraphics[width=13cm]{KingsCube-logo-lightBG.jpg}
+\includegraphics[width=4cm]{logoAFS.jpg} \hskip 1cm
+\includegraphics[width=8cm]{WCAlogo_XL.jpg}
+
+\vfill
+
+\large{Version 3.4 du 19 février 2015}
+
+
+\end{center}
+\end{titlepage}
+
+
+%\section*{Contact et Média}
+
+
+
+\pagebreak
+
+%\tableofcontents
+
+\pagebreak
+
+\section{Introduction}
+\subsection{Présentation}
+%\addcontentsline{toc}{subsection}{Présentation}
+
+La \cdf\ est une épreuve basée sur les compétitions officielles de Rubik's Cube. Elle se déroule pendant une année civile et prend la forme d'un classement pour chaque épreuve prise en compte.
+
+Ce classement intègre les résultats des compétitions se tenant sur le sol français du $1^{er}$ janvier au 31 décembre de la même année, la remise des prix ayant lieu lors de la phase finale.
+
+La Coupe est un événement organisé à l'initiative de l'Association Française de Speedcubing (AFS). Le sponsor principal est l'entreprise Kingscube. 
+
+La finalité est d'avoir une continuité entre toutes les compétitions françaises d'une même année et ainsi de récompenser les personnes les plus régulièrement présentes et performantes, par opposition aux championnats ou tournois qui consacrent un vainqueur ponctuel relativement aux adversaires présents ce jour-là.
+
+Le présent règlement définit l'ensemble des éléments permettant le déroulement de cette Coupe de France. Il est établi pour l'ensemble de la Coupe, et donc l'année en cours.
+
+\subsection{Contacts et médias}
+\begin{em}
+
+\textbf{Contact :}
+
+Pour toutes questions, remarques ou demandes de renseignements, s'adresser directement aux responsables par courriel : \href{mailto:coupedefrance@speedcubingfrance.org}{coupedefrance@speedcubingfrance.org}
+
+Pour contacter le responsable de la coupe de France (Antoine Piau) : par courriel 
+\href{mailto:lachose44@gmail.com}{lachose44@gmail.com}.
+
+Chaque personne souhaitant s'investir dans ce projet est invitée à contacter l'organisation.
+\\
+
+\textbf{Lien :}
+
+Site internet officiel de l'Association Française de Speedcubing (sur lequel il est possible de consulter le classement) : \url{http://www.speedcubingfrance.org/}
+
+Site internet officiel de l'association mondiale de cube (World Cube Association) : \url{http://www.worldcubeassociation.org/}
+
+Francocube, portail de cube francophone, forum comportant une partie représentative de la communauté française : \url{http://www.francocube.com/}
+
+Playnetcube, autre portail de cube francophone, avec forum également : \url{http://playnetcube.fr/}
+
+\end{em}
+%\pagebreak
+
+\section{Éligibilité}
+
+L'ensemble des personnes et épreuves classées le sont comme défini dans le présent article.
+
+\subsection{Compétitions}
+
+Sont prises en compte pour établir le classement général de la Coupe de France l'ensemble des compétitions officielles selon la WCA ayant lieu en France (y compris le championnat national). Le site internet de la WCA (cf partie Contact) sert de référence.
+
+\subsection{Participants}
+
+Aucun critère de nationalité particulier n'est pris en compte. Les étrangers participant aux compétitions françaises sont donc également classés à la Coupe. De plus, tout comme pour participer à une compétition réglementée par la WCA, il n'y a aucune limite d'âge pour prendre part à la Coupe de France.
+
+\subsection{Épreuves}
+
+Les épreuves officielles de la coupe de France évoluent pour chaque nouvelle édition. Elles sont retenues avant le début de l'édition concernée parmi les épreuves officielles de la WCA. Pour l'année 2015, les épreuves sont : \3, \4, \2, \oh, \bld\ et \pyra.
+
+\pagebreak
+
+\section{Classement}
+
+\subsection{Résultats}
+
+Après une compétition, chaque participant à la Coupe se voit attribuer un certain nombre de points pour chaque épreuve selon son rang à cette épreuve.
+
+\subsection{Distribution des points}
+\subsubsection{Classification des compétitions}
+
+Les compétitions sont réparties selon 3 catégories. La finalité de cette classification est d'attribuer un nombre de points plus important lorsque le nombre de participants augmente et que donc la difficulté augmente également.
+
+Les 3 catégories sont : 
+\begin{itemize}
+\item "mineure" pour les compétitions de 19 participants ou moins
+\item "intermédiaire" pour les compétitions entre 20 et 49 participants
+\item "majeure" pour les compétitions de 50 participants ou plus
+\end{itemize}
+
+On prend en compte le nombre de participants total, indépendamment des épreuves auxquels ceux-ci ont participé. La classification prévaut alors pour l'ensemble des épreuves de la compétition.
+
+\subsubsection{Attribution des points}
+
+Chaque participant à une épreuve reçoit un nombre de points défini par son rang final et par la catégorie de la compétition, réparti selon le tableau suivant :
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Rang & Majeure & Intermédiaire & Mineure \\
+\hline
+1 & 25 & 18 & 15 \\
+2 & 18 & 15 & 12 \\
+3 & 15 & 12 & 10 \\
+4 & 12 & 10 & 9  \\
+5 & 10 & 9  & 8  \\
+6 & 9  & 8  & 7  \\
+7 & 8  & 7  & 6  \\
+8 & 7  & 6  & 5  \\
+9 & 6  & 5  & 4  \\
+10-12 & 5  & 4  & 3  \\
+13-16 & 4  & 3  & 2  \\
+17-24 & 3  & 2  & 1  \\
+25-49 & 2  & 1  &    \\
+50+   & 1  &    &    \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\subsubsection{Cas particuliers}
+
+\begin{description}
+\item [Épreuves à plusieurs tours] : la place retenue du candidat à une épreuve est celle donnée par la WCA lors du dernier tour auquel le candidat a participé.
+\item [DNF ou non participation] : Dans le cas d'un résultat DNF ou DNS lors du premier tour de l'épreuve, le candidat n'est pas classé pour cette épreuve et ne recevra pas de points. Si ce résultat est obtenu pour un autre tour, alors le candidat est classé en tant que dernier (éventuellement à égalité avec toutes les personnes concernées) du tour en question, et marque le nombre de points correspondant à cette place.
+\end{description}
+
+%\pagebreak
+
+\subsection{Classement général}
+
+\subsubsection{Nombre maximum de résultats pris en compte}
+
+Le classement général est établi, pour chaque épreuve retenue, en faisant la somme des \maxcomp\ meilleurs résultats obtenus durant l'année pour l'épreuve concernée. Même après \maxcomp\ compétitions, le compétiteur peut donc continuer à optimiser son score.
+
+\subsubsection{Adhésion à l'AFS}
+
+L'AFS permet entre autres de fournir du matériel lors des compétitions et de gérer les assurances. Elle contribue ainsi à la qualité des compétitions et est à l'initiative de la Coupe. C'est pourquoi, dans le but de la soutenir, tout en intégrant chaque compétiteur au classement, un malus de dix points sera infligé aux personnes non adhérentes à l'association. Ce malus pourra être retiré à tout moment de l'année, dès règlement des frais d'adhésion de 5\texteuro .
+
+\subsubsection{Cas particulier d'une égalité}
+
+En cas d'égalité entre plusieurs participants dans le classement général, ceux-ci seront départagés à l'aide des critères suivants, dans cet ordre :
+
+\begin{itemize}
+\item Classement général en enlevant la restriction sur le nombre de résultats pris en compte.
+\item Nombre de compétitions remportées.
+\item Classement WCA, en comparant la meilleure moyenne officielle puis si nécessaire le meilleur résultat.
+\end{itemize}
+
+%\pagebreak
+
+\section{Organisation}
+
+\subsection{Compétitions}
+
+Aucune organisation particulière n'est mise en place ou attendue pour les compétitions. Celles-ci restent entièrement gérées par les organisateurs.
+
+\subsection{Classement}
+
+Le classement est mis à jour de manière automatique après la diffusion des résultats officiels de chaque compétition sur le site de la WCA. Ce classement est disponible sur le site internet de l'AFS.
+
+\section{Désignation des vainqueurs et phase finale}
+
+\subsection{\3}
+
+L'épreuve reine bénéficiera d'un traitement spécial. Le classement annuel ne servira pas à déterminer le vainqueur mais à qualifier cinq personnes pour une phase finale. Celle-ci verra s'affronter les cinq premiers du classement de la Coupe. Si le champion de France (vainqueur français du championnat de France) n'en fait pas partie, il est automatiquement qualifié à la place du cinquième. Leur classement définitif sera déterminé à l'issue de la phase finale. Ces participants seront défrayés (à hauteur d'une somme pour l'instant non définie) grâce au financement de Kingscube. Si la somme nécessaire au déplacement d'un ou plusieurs compétiteurs ne peut être pris en charge totalement par ces derniers, l'équipe de la Coupe fera son possible pour compléter le financement afin d'assurer les invitations des compétiteurs qualifiés (par exemple par la recherche de sponsors complémentaires).
+
+La phase finale ne sera pas homologuée par la WCA. Pour assurer néanmoins la présence de nombreux cubeurs, la journée précédant la phase finale sera une compétition officielle dont les détails organisationnels sont laissés à l'appréciation de l'équipe en charge de cet ultime événement.
+
+Le but de cette phase finale étant en outre de donner de la visibilité au cube, celle-ci sera organisée dans un lieu susceptible d'attirer un public extérieur et ses organisateurs seront en charge de communiquer autour de cet événement. La date et la localisation de cette phase finale seront communiquées au cours de l'année.
+
+Les résultats de la journée de compétition précédant la phase finale ne seront pas pris en compte pour la désignation des cinq participants.
+
+Le format exact de la phase finale sera communiqué plus tard dans l'année mais sera constitué de plusieurs épreuves de \3 et innovera par rapport au règlement WCA.
+
+\subsubsection{Autres épreuves}
+
+Le classement de l'année définit les vainqueurs des autres épreuves (\4, \2, \oh, \bld\ et \pyra). Les premiers de chaque catégorie seront récompensés lors de la phase finale. Les résultats de la journée de compétition précédant la phase finale seront pris en compte pour les classements de ces épreuves. Les gagnants seront donc déterminés le jour même.
+
+\subsubsection{Présence des participants}
+
+La présence à cette dernière compétition n'est pas obligatoire. À défaut, les prix seront transmis par des intermédiaires en cas d'absence des personnes récompensées. Pour le 3x3, comme dit précédemment, l'équipe tentera d'inviter les qualifiés afin d'obtenir la compétition la plus relevée possible. En cas d'indisponibilité de l'un d'entre eux, celui-ci cède sa place au suivant du classement.
+
+\section{Palmarès de la Coupe De France}
+
+Voici les vainqueurs des précédentes éditions de la Coupe de France (points obtenus entre parenthèses) :
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Épreuve & 2012 & 2013 \\
+\hline
+3x3x3 & Antoine Piau (121) & Hippolyte Moreau (100) \\
+4x4x4 & Antoine Piau (114) & Valentin Hoffmann (90) \\
+5x5x5 & Philippe Virouleau (81) & Erwan Kohler (97) \\
+2x2x2 & Kevin Guillaumond (124) & Kevin Guillaumond (119) \\
+3x3x3 Blind & François Courtès (127) & François Courtès (144) \\
+3x3x3 OH & Antoine Piau (124) & Valentin Hoffmann (89) \\
+3x3x3 FM & Clément Gallet (101) & Hippolyte Moreau (64) \\
+Pyraminx & - & Hippolyte Moreau (115) \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Notes : 
+\begin{itemize}
+\item Le Pyraminx n'a été instauré que depuis l'édition de 2013. À l'inverse, le 5x5 et le Fewest Moves sont supprimés de la Coupe à partir de l'édition de 2015 car leurs classements étaient trop peu significatifs. 
+\item En 2014, l'événement n'a pas eu lieu faute d'organisateur. 
+\item La classification (limite de compétiteurs pour l'attribution des titres mineure/intermédiaire/majeure) a été revue pour l'édition de 2015.
+\item Le nombre de compétitions maximal a été réévalué entre chaque édition.
+\item Les championnats de France sont pris en compte à partir de l'édition de 2015.
+\item L'appellation "Coupe de France" tout court est donnée ici puisque Kingscube n'est le sponsor qu'à partir de l'édition de 2015.
+\end{itemize}
+
+\section{Auteurs}
+Ce règlement a été initialement pensé, écrit et mis en forme par Pierre Lemerle et Mario Laurent (éditions de 2012 et 2013). La présente version (édition de 2015) a été rédigée à partir de cette base par Antoine Piau et Hippolyte Moreau.
+%\begin{center}
+%
+%\includegraphics[width=10cm]{2012_333.jpg}
+%
+%podium du 3x3x3
+%
+%\end{center}
+
+%\subsubsection{Statistiques}
+%
+%\begin{description}
+%\item[nombres de partipants :] 33
+%\item[nombre de compétitions pris en compte :] 15
+%\item[lieu de la phase finale :] Dallet (près de Clermont-Ferrand - 63)
+%\item[les sponsors de cette édition :] Le conseil général du Puy de Dôme, La mairie de Dallet, LighTake
+%\end{description}
+%
+%\begin{center}
+%
+%\includegraphics[width=10cm]{2012_recompenses.jpg}
+%
+%ensemble des récompenses offertes par les sponsors
+%
+%\end{center}
+
+\end{document}
+
