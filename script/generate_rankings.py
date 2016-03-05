@@ -27,9 +27,10 @@ class Competition(object):
     # Static set of competitors per event
     competitors_per_event = defaultdict(set)
 
-    def __init__(self, cid, month, day):
+    def __init__(self, cid, name, month, day):
         """ Init from competition's id, day/month to be able to sort """
         self.cid = cid
+        self.name = name
         self.month = int(month)
         self.day = int(day)
         # Dictionary of results, event -> list of Result
@@ -195,6 +196,7 @@ class RankingGenerator(object):
         ranking_dict = dict()
         ranking_dict['competitors'] = dict()
         ranking_dict['events'] = dict()
+        ranking_dict['competitions'] = list()
         for competitor in self.competitors.itervalues():
             ranking_dict['competitors'][competitor.wca_id] = competitor.to_json()
 
@@ -211,6 +213,8 @@ class RankingGenerator(object):
                 # figure out something else
                 ranking_dict['competitors'][comp.wca_id][event]['event_pos'] = index
                 ranking_dict['events'][event].append(comp.wca_id)
+        for competition in self.competitions:
+            ranking_dict['competitions'].append({"cid":competition.cid, "name":competition.name});
         return ranking_dict
 
 
@@ -225,7 +229,7 @@ class RankingGenerator(object):
             if len(line) <= 0:
                 continue
             fields = line.split("\t")
-            self.competitions.append(Competition(fields[0], fields[6], fields[7]))
+            self.competitions.append(Competition(fields[0], fields[1], fields[6], fields[7]))
 
         self.competitions.sort()
 
