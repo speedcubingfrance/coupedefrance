@@ -192,17 +192,15 @@ class RankingGenerator(object):
         """ Create the json representation of the rankings """
         # Here we want a root dictionary with two entries :
         # - 'competitors' indexed on wca_id with all the competitors scores
-        # - 'events' indexed on event_id with the sorted list of wca_id
+        # - 'competitions' ordered list of competitions
         ranking_dict = dict()
         ranking_dict['competitors'] = dict()
-        ranking_dict['events'] = dict()
         ranking_dict['competitions'] = list()
         for competitor in self.competitors.itervalues():
             ranking_dict['competitors'][competitor.wca_id] = competitor.to_json()
 
 
         for event in EVENTS:
-            ranking_dict['events'][event] = list()
             index = 0
             # Output sorted competitors ranking for this event
             for comp in sorted(Competition.competitors_per_event[event],
@@ -212,7 +210,6 @@ class RankingGenerator(object):
                 # FIXME this is kinda ugly to do this here, but I couldn't
                 # figure out something else
                 ranking_dict['competitors'][comp.wca_id][event]['event_pos'] = index
-                ranking_dict['events'][event].append(comp.wca_id)
         for competition in self.competitions:
             ranking_dict['competitions'].append({"cid":competition.cid,
                                                  "name":competition.name,
