@@ -60,14 +60,15 @@ function cdf_load_json(data) {
 
 //Format the name so that it fits in the array
 function prettyName(fullName) {
-  var retName = fullName.replace(" Open Rubik 2015", "");
+  var retName = fullName.replace(" Open Rubik", "");
+  retName = retName.replace(" 2015", "");
+  retName = retName.replace(" 2016", "");
+  retName = retName.replace(" Open", "");
   retName = retName.replace(" MariCubik", "");
   retName = retName.replace(" Megaminx", "");
   retName = retName.replace("Chambéry Cube", "Chambéry");
-  retName = retName.replace("France 2015", "France");
-  retName = retName.replace("Open Cube Project 2015", "OCP");
-  retName = retName.replace(" Open 2015", "");
-  retName = retName.replace(" Jeu et Jouet 2015", "");
+  retName = retName.replace("Open Cube Project", "OCP");
+  retName = retName.replace(" Jeu et Jouet", "");
   retName = retName.replace("Galeries Dorian", "GD");
   retName = retName.replace("La Montagne", "LM");
   retName = retName.replace("V-CUBE ", "");
