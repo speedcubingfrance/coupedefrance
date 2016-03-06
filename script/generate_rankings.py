@@ -214,7 +214,9 @@ class RankingGenerator(object):
                 ranking_dict['competitors'][comp.wca_id][event]['event_pos'] = index
                 ranking_dict['events'][event].append(comp.wca_id)
         for competition in self.competitions:
-            ranking_dict['competitions'].append({"cid":competition.cid, "name":competition.name});
+            ranking_dict['competitions'].append({"cid":competition.cid,
+                                                 "name":competition.name,
+                                                 "rank":competition.rank});
         return ranking_dict
 
 
