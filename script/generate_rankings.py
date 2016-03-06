@@ -5,7 +5,7 @@ import subprocess
 import json
 from collections import defaultdict
 
-YEAR = "2015"
+YEAR = "2016"
 COUNTRY = "France"
 DATA_DIR = "data/"
 BUILD_DIR = "build/"
