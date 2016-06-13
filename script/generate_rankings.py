@@ -6,7 +6,7 @@ import json
 from collections import defaultdict
 
 YEAR = "2016"
-COUNTRY = "France"
+COUNTRY = "Switzerland"
 DATA_DIR = "data/"
 BUILD_DIR = "build/"
 # Best N competitions to consider
