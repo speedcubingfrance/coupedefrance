@@ -11,7 +11,7 @@ from StringIO import StringIO
 from collections import defaultdict
 
 YEAR = "2016"
-COUNTRY = "Switzerland"
+COUNTRY = "France"
 DATA_DIR = "data/"
 BUILD_DIR = "build/"
 # Best N competitions to consider
