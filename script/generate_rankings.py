@@ -279,14 +279,14 @@ class RankingGenerator(object):
 class WCADownloader(object):
     def download(self):
         if all(os.path.isfile(file) for file in RELEVANT_FILES):
-            print "No download is performed since all relevant files already exist in the data/ directory."
+            print("No download is performed since all relevant files already exist in the data/ directory.")
             return
         response = urllib2.urlopen(WCA_EXPORT_SITE)
         html = response.read()
         match = re.search(WCA_FILE_PATTERN, html)
         if match:
             wca_url = WCA_EXPORT_DIRECTORY + match.group(0)
-            print "Downloading latest WCA export at: " + wca_url
+            print("Downloading latest WCA export at: " + wca_url)
             response = urllib2.urlopen(wca_url)
             wca_zip_file = zipfile.ZipFile(StringIO(response.read()))
             for relevant_file in RELEVANT_FILES:
@@ -294,7 +294,7 @@ class WCADownloader(object):
                 with open(relevant_file, 'w') as f:
                     f.write(compressed_file.read())
         else:
-            print "Couldn't determine the latest WCA export file. Please download it manually and unzip it in the data/ directory."
+            print("Couldn't determine the latest WCA export file. Please download it manually and unzip it in the data/ directory.")
 
             
 if __name__ == "__main__":
