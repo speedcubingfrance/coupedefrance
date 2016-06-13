@@ -3,6 +3,11 @@
 """ Generate rankings for a country and a year """
 import subprocess
 import json
+import urllib2
+import re
+import os.path
+import zipfile
+from StringIO import StringIO
 from collections import defaultdict
 
 YEAR = "2016"
@@ -13,7 +18,11 @@ BUILD_DIR = "build/"
 BEST_OF = 6
 COMPETITIONS_FILE = DATA_DIR + "WCA_export_Competitions.tsv"
 RESULTS_FILE = DATA_DIR + "WCA_export_Results.tsv"
+RELEVANT_FILES = [COMPETITIONS_FILE, RESULTS_FILE]
 EVENTS = ["333", "444", "222", "333oh", "333bf", "pyram"]
+WCA_EXPORT_DIRECTORY = "https://www.worldcubeassociation.org/results/misc/"
+WCA_EXPORT_SITE = WCA_EXPORT_DIRECTORY + "export.html"
+WCA_FILE_PATTERN = r"WCA_export.*?\.tsv\.zip"
 
 SCORE_TABLE = dict()
 
@@ -267,8 +276,28 @@ class RankingGenerator(object):
                                     single, average)
 
 
+class WCADownloader(object):
+    def download(self):
+        response = urllib2.urlopen(WCA_EXPORT_SITE)
+        html = response.read()
+        match = re.search(WCA_FILE_PATTERN, html)
+        if match:
+            wca_url = WCA_EXPORT_DIRECTORY + match.group(0)
+            print "Downloading latest WCA export at: " + wca_url
+            response = urllib2.urlopen(wca_url)
+            wca_zip_file = zipfile.ZipFile(StringIO(response.read()))
+            for relevant_file in RELEVANT_FILES:
+                compressed_file = wca_zip_file.open(os.path.basename(relevant_file))
+                with open(relevant_file, 'w') as f:
+                    f.write(compressed_file.read())
+        else:
+            print "Couldn't determine the latest WCA export file. Please download it manually and unzip it in the data/ directory."
+
+            
 if __name__ == "__main__":
     try:
+        WCA_DOWNLOADER = WCADownloader()
+        WCA_DOWNLOADER.download()
         with open("points.json", "r") as fpoints:
             # Load points table from json
             SCORE_TABLE = json.load(fpoints)
@@ -279,5 +308,5 @@ if __name__ == "__main__":
             json.dump(RGEN.to_json(), output)
 
     except subprocess.CalledProcessError as exep:
-        print "File doesn't exist or couldn't find competitions in France in " + YEAR
+        print "File doesn't exist or couldn't find competitions in " + COUNTRY + " in " + YEAR
 
