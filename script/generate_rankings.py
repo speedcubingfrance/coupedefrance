@@ -278,6 +278,9 @@ class RankingGenerator(object):
 
 class WCADownloader(object):
     def download(self):
+        if all(os.path.isfile(file) for file in RELEVANT_FILES):
+            print "No download is performed since all relevant files already exist in the data/ directory."
+            return
         response = urllib2.urlopen(WCA_EXPORT_SITE)
         html = response.read()
         match = re.search(WCA_FILE_PATTERN, html)
