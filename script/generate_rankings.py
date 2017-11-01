@@ -10,7 +10,7 @@ import zipfile
 from StringIO import StringIO
 from collections import defaultdict
 
-YEAR = "2016"
+YEAR = "2017"
 COUNTRY = "France"
 DATA_DIR = "data/"
 BUILD_DIR = "build/"
@@ -237,6 +237,8 @@ class RankingGenerator(object):
             if len(line) <= 0:
                 continue
             fields = line.split("\t")
+            if fields[0] == "WC2017" or fields[0] == "OnlyFMC2017":
+                continue
             self.competitions.append(Competition(fields[0], fields[1], fields[6], fields[7]))
 
         self.competitions.sort()
@@ -296,7 +298,7 @@ class WCADownloader(object):
         else:
             print("Couldn't determine the latest WCA export file. Please download it manually and unzip it in the data/ directory.")
 
-            
+
 if __name__ == "__main__":
     try:
         WCA_DOWNLOADER = WCADownloader()
